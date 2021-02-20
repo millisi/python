@@ -1,0 +1,32 @@
+x=30
+y=30
+mode='right'
+def setup():
+    size(500,500)
+    fill(134,21,160)
+    
+def draw():
+
+   global x, mode 
+   
+   if mode == 'right':
+       x+=1
+    elif x>0:
+        mode='left'
+   
+   
+   if x> 500:
+       mode='left'
+   elif x<0:
+       mode='right'
+   circle(x, y, 55)
+    
+    
+
+    
+
+    
+
+
+
+
