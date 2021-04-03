@@ -1,0 +1,37 @@
+x=0
+y=0
+def branch ():
+   line(0,0,100,0)
+   line(70,0,90,20)
+   line(70,0,90,-20)
+   line (30,0,50,20)
+   line (30,0,50,-20)
+def snowflake(x,y,sz):
+    push()
+    translate(x,y)
+    scale(sz)
+    for i in range (8):
+        branch ()
+        rotate(radians(45))
+    pop()
+    
+    
+y = [0,0,0,0,0,0,0,0]
+dy = []
+def setup ():
+    global dy 
+    size (len(y)*70,400)
+    
+    dy = range(len(y))
+    for index in range(len(dy)):
+        dy[index] = random(2,6)
+def draw():
+    global y, dy
+    background(255)
+    snowflake (100,100,0.5)
+    
+    for index in range(len(y)):
+        snowflake(70*index + 35, > height):
+                      y[index] = 0
+                      dy[index] = random (2,6)
+        
