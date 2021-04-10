@@ -1,0 +1,38 @@
+n=445
+class machine_gun:
+    def __init__(self , x, y):
+        self.x = x
+        self.y = y 
+        self.spreed = 5
+    def draw_(self):
+        square(self.x , self.y, 55)
+        square(self.x+15 , self.y-20, 30)
+cqur = machine_gun (225,455)
+
+class bullet:
+    def __init__(self , x, y):
+         self.x = x
+         self.y = y 
+    def draw_(self):
+        circle(self.x , self.y, 10)
+    def move(self):
+        self.y -= 2
+bullets = []
+def setup ():
+    size (500,500)
+def draw () :    
+    global l,k,cqur
+    cqur.draw_()
+    
+    for bul in bullets:
+        bul.move()
+        bul.draw_()
+    
+    if keyPressed:
+        if keyCode == LEFT:
+            cqur.x -= cqur.spreed
+        if keyCode == RIGHT:
+            cqur.x += cqur.spreed
+        if key == ' ':
+            bullets.append(bullet(self.x , self.y))
+            
