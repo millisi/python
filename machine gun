@@ -1,4 +1,3 @@
-n=445
 class machine_gun:
     def __init__(self , x, y):
         self.x = x
@@ -34,5 +33,7 @@ def draw () :
         if keyCode == RIGHT:
             cqur.x += cqur.spreed
         if key == ' ':
-            bullets.append(bullet(self.x , self.y))
+            bullets.append(bullet(cqur.x  , cqur.y  ))
+        if it moves machine_gun:
+            then the ballet folows 
             
