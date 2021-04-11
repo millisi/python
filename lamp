@@ -1,0 +1,21 @@
+lamp = 0
+def setup ():
+    global img,img2
+    img = loadImage ("off.png")
+    img2 = loadImage ("on.png")
+    size (500,500)
+def draw () : 
+    global igm , igm2
+    imageMode(CENTER)
+    if lamp == 0:
+        image(img , 250 ,250 )
+    else:
+        image(img2 , 250 ,240 )
+def keyPressed():
+    global lamp
+    if keyCode == LEFT:
+        lamp = 0  
+    if keyCode == RIGHT:
+        lamp == 1
+        
+              
