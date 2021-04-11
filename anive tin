@@ -1,0 +1,16 @@
+photo = 0
+def setup ():
+    global images
+    images = [ loadImage ("kenma.png"),loadImage ("02.png"), loadImage ("levi.png"),loadImage ("may.png"),loadImage ("misa.png") ]
+    size (700,700)
+def draw () : 
+    background(255)
+    imageMode(CENTER)
+    image (images[photo],350,350)
+def keyPressed():
+    global photo 
+    if keyCode == LEFT and photo!=0 :
+        photo -=1
+    if keyCode == RIGHT and photo!=4:
+        photo +=1
+        
