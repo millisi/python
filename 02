@@ -1,0 +1,4 @@
+img = loadImage("02.png")
+size(500,500)
+imageMode(CENTER)
+image(img , 250,250 , 250 , 350)
