@@ -1,0 +1,35 @@
+class Country:
+    def __init__(self, name , x, y):
+        self.x = x
+        self.y = y
+        self.name = name
+        self.value = 10
+    def draw_(self):
+        fill(218,160,240)
+        rect(self.x,self.y , self.value , 60)
+        fill(0)
+        text(self.name , self.x,self.y+50)
+        text(self.value , self.x+200,self.y+50)
+    def raise_(self, x):
+        self.value+=x
+Russia = Country("Russia" , 0,0)
+USA = Country("USA" , 0, 90)
+Japan = Country("Japan" , 0, 180)
+Chaina = Country("Chaina" , 0, 270)
+def setup ():
+    size (700,500)
+    textSize(50)
+   #text("Russia",x,y)
+    fill(0)
+def draw ():
+    global Russia
+    background(255)
+    Russia.raise_(1)
+    Russia.draw_()
+    USA.raise_(1)
+    USA.draw_()
+    Japan.raise_(1)
+    Japan.draw_()
+    Chaina.raise_(1)
+    Chaina.draw_()
+    
