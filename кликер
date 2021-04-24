@@ -1,0 +1,19 @@
+bg = 0
+def setup ():
+    size ( 400, 400 ) 
+    textSize (30)
+    fill(255,0,0)
+def draw () :
+    global bg
+    background (255) 
+    ellipse (200,200,70,70)
+    text (bg, 190,100)
+def mouseClicked (): 
+    global bg
+    xDif = 200 - mouseX 
+    yDif = 200 - mouseY 
+    if sqrt(xDif*xDif + yDif*yDif) < 35: 
+        bg += 1
+    
+    
+    
