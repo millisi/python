@@ -1,12 +1,17 @@
 bg = 0
 def setup ():
+    global img
+    img = loadImage("gl.png")
     size ( 400, 400 ) 
+    imageMode(CENTER)
     textSize (30)
     fill(255,0,0)
 def draw () :
     global bg
-    background (255) 
-    ellipse (200,200,70,70)
+    background (149,245,109) 
+    fill (255)
+    image(img,200,200,200,200)
+    #ellipse (200,200,70,70)
     text (bg, 190,100)
 def mouseClicked (): 
     global bg
