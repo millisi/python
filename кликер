@@ -1,18 +1,45 @@
 bg = 0
+
+avocado = 0 
+
+def draw_avocado(x,y,sz):
+    push()
+    translate(x,y)
+    scale(sz)
+    image(avocado,0,0)
+    pop()
+
+
+
+
+y=[0,0,0,0,0,0,0,0,0,0]
+dy=[]
 def setup ():
-    global img
+    global img , dy , avocado
+    avocado = loadImage("fon.png")
     img = loadImage("gl.png")
     size ( 400, 400 ) 
     imageMode(CENTER)
     textSize (30)
     fill(255,0,0)
+    dy=range(len(y))
+    for index in range(len(dy)):
+        dy[index]=random(2,6)
 def draw () :
     global bg
     background (149,245,109) 
+    for index in range(len(y)):
+        draw_avocado(70*index+35,y[index],0.2)
+        y[index]+=dy[index]
+        if y[ index]+35 >height:
+            y[index]=0
+            dy[index]=random(2,6)
     fill (255)
     image(img,200,200,200,200)
     #ellipse (200,200,70,70)
     text (bg, 190,100)
+    
+    
 def mouseClicked (): 
     global bg
     xDif = 200 - mouseX 
