@@ -34,7 +34,7 @@ def draw () :
     global bg,avocados, dy, avokado
     background (149,245,109) 
     
-    if (random(0,100) < 0.3):
+    if (random(0,100) < bg):
         avocados.append(Avocado())
     
     for av in avocados:
