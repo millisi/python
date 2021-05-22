@@ -1,21 +1,23 @@
 bg = 0
 
-avocado = 0 
-def draw_avocado(x,y,sz):
+avocado = []
+ 
+def draw_fruits(x,y,sz , type):
     push()
     translate(x,y)
     scale(sz)
-    image(avocado,0,0)
+    image(avocado[type],0,0)
     pop()
     
 class Avocado:
     def __init__(self):
         self.x = random(0,400)
         self.y = -10
-        self.sc = random(0.1,0.3)
-        self.speed = random(1,3)
+        self.sc = random(0.1,0.2)
+        self.speed = random(1,2)
+        self.type = floor(random(0,len(avocado)))
     def draw_(self):
-        draw_avocado(self.x , self.y , self.sc)
+        draw_fruits(self.x , self.y , self.sc , self.type)
     def move(self):
         self.y += self.speed
 
@@ -23,7 +25,10 @@ class Avocado:
 avocados = []
 def setup ():
     global img ,dy, avocado,Avocado
-    avocado = loadImage("fon.png")
+    avocado.append(loadImage("fon.png"))
+    avocado.append(loadImage("kawai.png"))
+    avocado.append(loadImage("gu.png"))
+    
     img = loadImage("gl.png")
     size ( 400, 400 ) 
     imageMode(CENTER)
@@ -31,7 +36,7 @@ def setup ():
     fill(255,0,0)
 
 def draw () :
-    global bg,avocados, dy, avokado
+    global bg,avocados, dy, avokado, kavai
     background (149,245,109) 
     
     if (random(0,500) < bg > 9 ):
@@ -40,13 +45,13 @@ def draw () :
     for av in avocados:
         av.draw_()
         av.move()
-    
+        
     fill (255)
     image(img,200,200,200,200)
     #ellipse (200,200,70,70)
     text (bg, 190,100)    
 def keyPressed () :
-    global avocados , bg 
+    global avocados , bg, kavai 
     if key == ENTER:
         avocados.append(Avocado())
     else: 
