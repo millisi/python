@@ -11,7 +11,7 @@ def draw_fruits(x,y,sz , type):
     
 class Avocado:
     def __init__(self):
-        self.x = random(0,400)
+        self.x = random(0,1300)
         self.y = -10
         self.sc = random(0.1,0.2)
         self.speed = random(1,2)
@@ -25,16 +25,18 @@ class Avocado:
 avocados = []
 def setup ():
     global img ,dy, avocado,Avocado
+    
+    textFont(loadFont('Impact-48.vlw'))
+    textSize(50)
+    fill(124,71,44)
     avocado.append(loadImage("fon.png"))
     avocado.append(loadImage("kawai.png"))
     avocado.append(loadImage("gu.png"))
     
     img = loadImage("gl.png")
-    size ( 400, 400 ) 
+    size ( 1300, 400 ) 
     imageMode(CENTER)
-    textSize (30)
-    fill(255,0,0)
-
+    #textSize (30)
 def draw () :
     global bg,avocados, dy, avokado, kavai
     background (149,245,109) 
@@ -45,11 +47,10 @@ def draw () :
     for av in avocados:
         av.draw_()
         av.move()
-        
-    fill (255)
-    image(img,200,200,200,200)
+
+    image(img,655,200,200,200)
     #ellipse (200,200,70,70)
-    text (bg, 190,100)    
+    text (bg, 640,100)    
 def keyPressed () :
     global avocados , bg, kavai 
     if key == ENTER:
